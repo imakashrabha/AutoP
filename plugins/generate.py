@@ -26,18 +26,18 @@ async def logout(client, message):
     if user_data is None:
         return 
     await db.set_session(message.from_user.id, session=None)  
-    await message.reply("**Logout Successfully** ♦")
+    await message.reply("𝖫𝗈𝗀𝗈𝗎𝗍 𝖲𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒")
 
 @Client.on_message(filters.private & ~filters.forwarded & filters.command(["login"]))
 async def main(bot: Client, message: Message):
     user_data = await db.get_session(message.from_user.id)
     if user_data is not None:
-        await message.reply("**Your Are Already Logged In. First /logout Your Old Session. Then Do Login.**")
+        await message.reply("𝖸𝗈𝗎𝗋 𝖠𝗋𝖾 𝖠𝗅𝗋𝖾𝖺𝖽𝗒 𝖫𝗈𝗀𝗀𝖾𝖽 𝖨𝗇. 𝖥𝗂𝗋𝗌𝗍 /logout 𝖸𝗈𝗎𝗋 𝖮𝗅𝖽 𝖲𝖾𝗌𝗌𝗂𝗈𝗇. 𝖳𝗁𝖾𝗇 𝖣𝗈 𝖫𝗈𝗀𝗂𝗇.")
         return 
     user_id = int(message.from_user.id)
-    phone_number_msg = await bot.ask(chat_id=user_id, text="<b>Please send your phone number which includes country code</b>\n<b>Example:</b> <code>+13124562345, +9171828181889</code>")
+    phone_number_msg = await bot.ask(chat_id=user_id, text="<b>𝖯𝗅𝖾𝖺𝗌𝖾 𝗌𝖾𝗇𝖽 𝗒𝗈𝗎𝗋 𝗉𝗁𝗈𝗇𝖾 𝗇𝗎𝗆𝖻𝖾𝗋 𝗐𝗁𝗂𝖼𝗁 𝗂𝗇𝖼𝗅𝗎𝖽𝖾𝗌 𝖼𝗈𝗎𝗇𝗍𝗋𝗒 𝖼𝗈𝖽𝖾</b>\n𝖤𝗑𝖺𝗆𝗉𝗅𝖾: <code>+13124562345, +9171828181889</code>")
     if phone_number_msg.text=='/cancel':
-        return await phone_number_msg.reply('<b>process cancelled !</b>')
+        return await phone_number_msg.reply('𝗉𝗋𝗈𝖼𝖾𝗌𝗌 𝖼𝖺𝗇𝖼𝖾𝗅𝗅𝖾𝖽')
     phone_number = phone_number_msg.text
     client = Client(":memory:", API_ID, API_HASH)
     await client.connect()
