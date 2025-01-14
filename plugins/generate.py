@@ -46,33 +46,33 @@ async def main(bot: Client, message: Message):
         code = await client.send_code(phone_number)
         phone_code_msg = await bot.ask(user_id, "𝖯𝗅𝖾𝖺𝗌𝖾 𝖼𝗁𝖾𝖼𝗄 𝖿𝗈𝗋 𝖺𝗇 𝖮𝖳𝖯 𝗂𝗇 𝗈𝖿𝖿𝗂𝖼𝗂𝖺𝗅 𝗍𝖾𝗅𝖾𝗀𝗋𝖺𝗆 𝖺𝖼𝖼𝗈𝗎𝗇𝗍. 𝖨𝖿 𝗒𝗈𝗎 𝗀𝗈𝗍 𝗂𝗍, 𝗌𝖾𝗇𝖽 𝖮𝖳𝖯 𝗁𝖾𝗋𝖾 𝖺𝖿𝗍𝖾𝗋 𝗋𝖾𝖺𝖽𝗂𝗇𝗀 𝗍𝗁𝖾 𝖻𝖾𝗅𝗈𝗐 𝖿𝗈𝗋𝗆𝖺𝗍.\n\n𝖨𝖿 𝖮𝖳𝖯 𝗂𝗌 `12345`, 𝗉𝗅𝖾𝖺𝗌𝖾 𝗌𝖾𝗇𝖽 𝗂𝗍 𝖺𝗌 `1 2 3 4 5`.\n\n𝖤𝗇𝗍𝖾𝗋 /cancel 𝗍𝗈 𝖼𝖺𝗇𝖼𝖾𝗅 𝖳𝗁𝖾 𝖯𝗋𝗈𝖼𝖼𝖾𝗌", filters=filters.text, timeout=600)
     except PhoneNumberInvalid:
-        await phone_number_msg.reply('`PHONE_NUMBER` **is invalid.**')
+        await phone_number_msg.reply('`PHONE_NUMBER` 𝗂𝗌 𝗂𝗇𝗏𝖺𝗅𝗂𝖽')
         return
     if phone_code_msg.text=='/cancel':
-        return await phone_code_msg.reply('<b>process cancelled !</b>')
+        return await phone_code_msg.reply('𝗉𝗋𝗈𝖼𝖾𝗌𝗌 𝖼𝖺𝗇𝖼𝖾𝗅𝗅𝖾𝖽 !')
     try:
         phone_code = phone_code_msg.text.replace(" ", "")
         await client.sign_in(phone_number, code.phone_code_hash, phone_code)
     except PhoneCodeInvalid:
-        await phone_code_msg.reply('**OTP is invalid.**')
+        await phone_code_msg.reply('𝖮𝖳𝖯 𝗂𝗌 𝗂𝗇𝗏𝖺𝗅𝗂𝖽.')
         return
     except PhoneCodeExpired:
-        await phone_code_msg.reply('**OTP is expired.**')
+        await phone_code_msg.reply('𝖮𝖳𝖯 𝗂𝗌 𝖾𝗑𝗉𝗂𝗋𝖾𝖽.')
         return
     except SessionPasswordNeeded:
-        two_step_msg = await bot.ask(user_id, '**Your account has enabled two-step verification. Please provide the password.\n\nEnter /cancel to cancel The Procces**', filters=filters.text, timeout=300)
+        two_step_msg = await bot.ask(user_id, '𝖸𝗈𝗎𝗋 𝖺𝖼𝖼𝗈𝗎𝗇𝗍 𝗁𝖺𝗌 𝖾𝗇𝖺𝖻𝗅𝖾𝖽 𝗍𝗐𝗈-𝗌𝗍𝖾𝗉 𝗏𝖾𝗋𝗂𝖿𝗂𝖼𝖺𝗍𝗂𝗈𝗇. 𝖯𝗅𝖾𝖺𝗌𝖾 𝗉𝗋𝗈𝗏𝗂𝖽𝖾 𝗍𝗁𝖾 𝗉𝖺𝗌𝗌𝗐𝗈𝗋𝖽.\n\n𝖤𝗇𝗍𝖾𝗋 /cancel 𝗍𝗈 𝖼𝖺𝗇𝖼𝖾𝗅 𝖳𝗁𝖾 𝖯𝗋𝗈𝖼𝖼𝖾𝗌', filters=filters.text, timeout=300)
         if two_step_msg.text=='/cancel':
-            return await two_step_msg.reply('<b>process cancelled !</b>')
+            return await two_step_msg.reply('𝗉𝗋𝗈𝖼𝖾𝗌𝗌 𝖼𝖺𝗇𝖼𝖾𝗅𝗅𝖾𝖽')
         try:
             password = two_step_msg.text
             await client.check_password(password=password)
         except PasswordHashInvalid:
-            await two_step_msg.reply('**Invalid Password Provided**')
+            await two_step_msg.reply('𝗂𝗇𝗏𝖺𝗅𝗂𝖽 𝗉𝖺𝗌𝗌𝗐𝗈𝗋𝖽')
             return
     string_session = await client.export_session_string()
     await client.disconnect()
     if len(string_session) < SESSION_STRING_SIZE:
-        return await message.reply('<b>invalid session sring</b>')
+        return await message.reply('𝗂𝗇𝗏𝖺𝗅𝗂𝖽 𝗌𝖾𝗌𝗌𝗂𝗈𝗇 𝗌𝗋𝗂𝗇𝗀')
     try:
         user_data = await db.get_session(message.from_user.id)
         if user_data is None:
