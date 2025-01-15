@@ -145,7 +145,7 @@ async def accept(client, message):
     show = await message.reply("**Please Wait.....**")
     user_data = await db.get_session(message.from_user.id)
     if user_data is None:
-        await show.edit("**𝖥𝗈𝗋 𝖠𝖼𝖼𝖾𝗉𝗍 𝖯𝖾𝗇𝖽𝗂𝗇𝗀 𝖱𝖾𝗊𝗎𝖾𝗌𝗍 𝖸𝗈𝗎 𝖧𝖺𝗏𝖾 𝖳𝗈 /𝗅𝗈𝗀𝗂𝗇 𝖥𝗂𝗋𝗌𝗍.**")
+        await show.edit("**𝖥𝗈𝗋 𝖠𝖼𝖼𝖾𝗉𝗍 𝖯𝖾𝗇𝖽𝗂𝗇𝗀 𝖱𝖾𝗊𝗎𝖾𝗌𝗍 𝖸𝗈𝗎 𝖧𝖺𝗏𝖾 𝖳𝗈 /login 𝖥𝗂𝗋𝗌𝗍.**")
         return
     try:
         acc = Client("joinrequest", session_string=user_data, api_hash=API_HASH, api_id=API_ID)
