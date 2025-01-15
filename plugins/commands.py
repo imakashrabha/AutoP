@@ -142,28 +142,28 @@ async def verupikkals(bot, message):
 
 @Client.on_message(filters.command('accept') & filters.private)
 async def accept(client, message):
-    show = await message.reply("**Please Wait.....**")
+    show = await message.reply("𝖯𝗅𝖾𝖺𝗌𝖾 𝖶𝖺𝗂𝗍.....")
     user_data = await db.get_session(message.from_user.id)
     if user_data is None:
-        await show.edit("**𝖥𝗈𝗋 𝖠𝖼𝖼𝖾𝗉𝗍 𝖯𝖾𝗇𝖽𝗂𝗇𝗀 𝖱𝖾𝗊𝗎𝖾𝗌𝗍 𝖸𝗈𝗎 𝖧𝖺𝗏𝖾 𝖳𝗈 /login 𝖥𝗂𝗋𝗌𝗍.**")
+        await show.edit("𝖥𝗈𝗋 𝖠𝖼𝖼𝖾𝗉𝗍 𝖯𝖾𝗇𝖽𝗂𝗇𝗀 𝖱𝖾𝗊𝗎𝖾𝗌𝗍 𝖸𝗈𝗎 𝖧𝖺𝗏𝖾 𝖳𝗈 /login 𝖥𝗂𝗋𝗌𝗍.")
         return
     try:
         acc = Client("joinrequest", session_string=user_data, api_hash=API_HASH, api_id=API_ID)
         await acc.connect()
     except:
-        return await show.edit("**Your Login Session Expired. So /logout First Then Login Again By - /login**")
-    show = await show.edit("**Now Forward A Message From Your Channel Or Group With Forward Tag\n\nMake Sure Your Logged In Account Is Admin In That Channel Or Group With Full Rights.**")
+        return await show.edit("𝖸𝗈𝗎𝗋 𝖫𝗈𝗀𝗂𝗇 𝖲𝖾𝗌𝗌𝗂𝗈𝗇 𝖤𝗑𝗉𝗂𝗋𝖾𝖽. 𝖲𝗈 /logout  𝖥𝗂𝗋𝗌𝗍 𝖳𝗁𝖾𝗇 𝖫𝗈𝗀𝗂𝗇 𝖠𝗀𝖺𝗂𝗇 𝖡𝗒 - /login")
+    show = await show.edit("𝖭𝗈𝗐 𝖥𝗈𝗋𝗐𝖺𝗋𝖽 𝖠 𝖬𝖾𝗌𝗌𝖺𝗀𝖾 𝖥𝗋𝗈𝗆 𝖸𝗈𝗎𝗋 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 𝖮𝗋 𝖦𝗋𝗈𝗎𝗉 𝖶𝗂𝗍𝗁 𝖥𝗈𝗋𝗐𝖺𝗋𝖽 𝖳𝖺𝗀\n\n𝖬𝖺𝗄𝖾 𝖲𝗎𝗋𝖾 𝖸𝗈𝗎𝗋 𝖫𝗈𝗀𝗀𝖾𝖽 𝖨𝗇 𝖠𝖼𝖼𝗈𝗎𝗇𝗍 𝖨𝗌 𝖠𝖽𝗆𝗂𝗇 𝖨𝗇 𝖳𝗁𝖺𝗍 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 𝖮𝗋 𝖦𝗋𝗈𝗎𝗉 𝖶𝗂𝗍𝗁 𝖥𝗎𝗅𝗅 𝖱𝗂𝗀𝗁𝗍𝗌..")
     vj = await client.listen(message.chat.id)
     if vj.forward_from_chat and not vj.forward_from_chat.type in [enums.ChatType.PRIVATE, enums.ChatType.BOT]:
         chat_id = vj.forward_from_chat.id
         try:
             info = await acc.get_chat(chat_id)
         except:
-            await show.edit("**𝖤𝗋𝗋𝗈𝗋 - 𝖬𝖺𝗄𝖾 𝖲𝗎𝗋𝖾 𝖸𝗈𝗎𝗋 𝖫𝗈𝗀𝗀𝖾𝖽 𝖨𝗇 𝖠𝖼𝖼𝗈𝗎𝗇𝗍 𝖨𝗌 𝖠𝖽𝗆𝗂𝗇 𝖨𝗇 𝖳𝗁𝗂𝗌 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 𝖮𝗋 𝖦𝗋𝗈𝗎𝗉 𝖶𝗂𝗍𝗁 𝖱𝗂𝗀𝗁𝗍𝗌.**")
+            await show.edit("𝖤𝗋𝗋𝗈𝗋 - 𝖬𝖺𝗄𝖾 𝖲𝗎𝗋𝖾 𝖸𝗈𝗎𝗋 𝖫𝗈𝗀𝗀𝖾𝖽 𝖨𝗇 𝖠𝖼𝖼𝗈𝗎𝗇𝗍 𝖨𝗌 𝖠𝖽𝗆𝗂𝗇 𝖨𝗇 𝖳𝗁𝗂𝗌 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 𝖮𝗋 𝖦𝗋𝗈𝗎𝗉 𝖶𝗂𝗍𝗁 𝖱𝗂𝗀𝗁𝗍𝗌.")
     else:
-        return await message.reply("**𝖬𝖾𝗌𝗌𝖺𝗀𝖾 𝖭𝗈𝗍 𝖥𝗈𝗋𝗐𝖺𝗋𝖽𝖾𝖽 𝖥𝗋𝗈𝗆 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 𝖮𝗋 𝖦𝗋𝗈𝗎𝗉.**")
+        return await message.reply("𝖬𝖾𝗌𝗌𝖺𝗀𝖾 𝖭𝗈𝗍 𝖥𝗈𝗋𝗐𝖺𝗋𝖽𝖾𝖽 𝖥𝗋𝗈𝗆 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 𝖮𝗋 𝖦𝗋𝗈𝗎𝗉.")
     await vj.delete()
-    msg = await show.edit("**𝖠𝖼𝖼𝖾𝗉𝗍𝗂𝗇𝗀 𝖺𝗅𝗅 𝗃𝗈𝗂𝗇 𝗋𝖾𝗊𝗎𝖾𝗌𝗍𝗌... 𝖯𝗅𝖾𝖺𝗌𝖾 𝗐𝖺𝗂𝗍 𝗎𝗇𝗍𝗂𝗅 𝗂𝗍'𝗌 𝖼𝗈𝗆𝗉𝗅𝖾𝗍𝖾𝖽.**")
+    msg = await show.edit("𝖠𝖼𝖼𝖾𝗉𝗍𝗂𝗇𝗀 𝖺𝗅𝗅 𝗃𝗈𝗂𝗇 𝗋𝖾𝗊𝗎𝖾𝗌𝗍𝗌... 𝖯𝗅𝖾𝖺𝗌𝖾 𝗐𝖺𝗂𝗍 𝗎𝗇𝗍𝗂𝗅 𝗂𝗍'𝗌 𝖼𝗈𝗆𝗉𝗅𝖾𝗍𝖾𝖽.")
     try:
         while True:
             await acc.approve_all_chat_join_requests(chat_id)
@@ -171,9 +171,9 @@ async def accept(client, message):
             join_requests = [request async for request in acc.get_chat_join_requests(chat_id)]
             if not join_requests:
                 break
-        await msg.edit("**Successfully accepted all join requests.**")
+        await msg.edit("𝖲𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅𝗅𝗒 𝖺𝖼𝖼𝖾𝗉𝗍𝖾𝖽 𝖺𝗅𝗅 𝗃𝗈𝗂𝗇 𝗋𝖾𝗊𝗎𝖾𝗌𝗍𝗌.")
     except Exception as e:
-        await msg.edit(f"**An error occurred:** {str(e)}")
+        await msg.edit(f"An error occurred: {str(e)}")
 
 @Client.on_chat_join_request()
 async def approve_new(client, m):
