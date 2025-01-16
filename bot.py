@@ -45,18 +45,6 @@ class Bot(Client):
     async def stop(self, *args):
         await super().stop()
         print('Bot Stopped Bye')
-
-from plugins.commands import help_callback, handle_callback
-
-# Registering the /help command
-@app.on_message(filters.command("help"))
-def show_help(client, message):
-    help_callback(client, message)
-
-# Registering the callback query handler
-@app.on_callback_query()
-def callback_listener(client, callback_query):
-    handle_callback(client, callback_query)
     
 # Run the bot
 Bot().run()
