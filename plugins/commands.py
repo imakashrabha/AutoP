@@ -191,3 +191,24 @@ async def approve_new(client, m):
     except Exception as e:
         print(str(e))
         pass
+
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
+# Function to display the help button
+def help_callback(_, message):
+    message.reply_text(
+        "Choose an option:",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [InlineKeyboardButton("Help Info", callback_data="help_info")],
+                [InlineKeyboardButton("Back", callback_data="go_back")]
+            ]
+        )
+    )
+
+# Callback function handler
+def handle_callback(client, callback_query):
+    if callback_query.data == "help_info":
+        callback_query.message.edit_text("This is the help information!")
+    elif callback_query.data == "go_back":
+        callback_query.message.edit_text("You have gone back!")
