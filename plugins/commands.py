@@ -84,6 +84,8 @@ async def start_message(c, m):
             ],[
                 InlineKeyboardButton("• ᴜᴩᴅᴀᴛᴇꜱ •", url="https://telegram.me/AxomBotz"),
                 InlineKeyboardButton("• ꜱᴜᴩᴩᴏʀᴛ •", url="https://telegram.me/AxomBotzSupport")
+            ],[
+            InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data = "about"),
             ]]
         )
     )
