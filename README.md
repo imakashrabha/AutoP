@@ -38,7 +38,7 @@ broadcast - Broadcast Massage Send All Users In Bot.
 <details><summary>Tap On Me For Environment Variable</summary>
 
   - `API_ID` - Your Telegram API ID.Get it [Here](https://youtu.be/RdMY6Lqfi9w)
-  - `API_HASH` - Your Telegram API HASH.Get it [Here](https://youtu.be/RdMY6Lqfi9w))
+  - `API_HASH` - Your Telegram API HASH.Get it [Here](https://youtu.be/RdMY6Lqfi9w)
   - `DB_URI` - Mongodb [Database](https://youtu.be/pMJpHoiu1go)
   - `BOT_TOKEN` - Get From [BotFather](https://youtu.be/aJILCCXfNVM)
   - `AUTH_CHANNEL` - Your Force subscribe channel id.
