@@ -83,9 +83,7 @@ async def start_message(c, m):
                 InlineKeyboardButton("⇆ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘs ⇆", url=f"https://telegram.me/ALL_PENDING_ACCEPT_BOT?startgroup=true&admin=invite_users"),
             ],[
                 InlineKeyboardButton("• ᴜᴩᴅᴀᴛᴇꜱ •", url="https://telegram.me/AxomBotz"),
-                InlineKeyboardButton("• ꜱᴜᴩᴩᴏʀᴛ •", url="https://telegram.me/AxomBotzSupport")
-            ],[
-            InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data = "about"),
+                InlineKeyboardButton("• ғᴏʀ ᴍᴏʀᴇ •", url="https://t.me/+yft5ysRDW4BiOTc9")
             ]]
         )
     )
