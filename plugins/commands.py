@@ -90,7 +90,7 @@ async def start_message(c, m):
 
 @Client.on_message(filters.command(["stats", "status"]) & filters.user(ADMINS) & filters.reply)
 async def get_stats(bot, message):
-    total_users = await .total_users_count()
+    total_users = await some_object.total_users_count()
     total_chats = await .total_chats_count()
     uptime = time.strftime("%Hh%Mm%Ss", time.gmtime(time.time() - bot.uptime))    
     start_t = time.time()
