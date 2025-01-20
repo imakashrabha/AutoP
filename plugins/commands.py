@@ -75,7 +75,7 @@ async def start_message(c, m):
     if not is_subscribed:
         return
 
-    await m.reply_photo("https://graph.org/file/af26401be816088d8463c-cf468bb80c0c371770.jpg", caption="𝖧𝖾𝗒 {mention},<b>\n\n›› 𝖨 𝖢𝖺𝗇 𝖠𝖼𝖼𝖾𝗉𝗍 𝖩𝗈𝗂𝗇 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝗌 𝖠𝗎𝗍𝗈𝗆𝖺𝗍𝗂𝖼𝖺𝗅𝗅𝗒.\n›› 𝖨 𝖢𝖺𝗇 𝖠𝖼𝖼𝖾𝗉𝗍 𝖠𝗅𝗅 𝖯𝖾𝗇𝖽𝗂𝗇𝗀 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝗌.\n\n𝖩𝗎𝗌𝗍 𝖺𝖽𝖽 𝗆𝖾 𝗂𝗇 𝗒𝗈𝗎𝗋 𝖼𝗁𝖺𝗇𝗇𝖾𝗅𝗌 𝖺𝗇𝖽 𝗀𝗋𝗈𝗎𝗉𝗌 𝗐𝗂𝗍𝗁 𝗉𝖾𝗋𝗆𝗂𝗌𝗌𝗂𝗈𝗇 𝗍𝗈 𝖺𝖽𝖽 𝗇𝖾𝗐 𝗆𝖾𝗆𝖻𝖾𝗋𝗌.\n\n𝖧𝗈𝗐 𝗍𝗈 𝗎𝗌𝖾 𝗆𝖾 /help\n\n**<blockquote>ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://telegram.me/AlwaysToHelpBot'>𝖠𝗄𝖺𝗌𝗁</a></blockquote>**",
+    await m.reply_photo("https://graph.org/file/af26401be816088d8463c-cf468bb80c0c371770.jpg", caption="𝖧𝖾𝗒 ,<b>\n\n›› 𝖨 𝖢𝖺𝗇 𝖠𝖼𝖼𝖾𝗉𝗍 𝖩𝗈𝗂𝗇 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝗌 𝖠𝗎𝗍𝗈𝗆𝖺𝗍𝗂𝖼𝖺𝗅𝗅𝗒.\n›› 𝖨 𝖢𝖺𝗇 𝖠𝖼𝖼𝖾𝗉𝗍 𝖠𝗅𝗅 𝖯𝖾𝗇𝖽𝗂𝗇𝗀 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝗌.\n\n𝖩𝗎𝗌𝗍 𝖺𝖽𝖽 𝗆𝖾 𝗂𝗇 𝗒𝗈𝗎𝗋 𝖼𝗁𝖺𝗇𝗇𝖾𝗅𝗌 𝖺𝗇𝖽 𝗀𝗋𝗈𝗎𝗉𝗌 𝗐𝗂𝗍𝗁 𝗉𝖾𝗋𝗆𝗂𝗌𝗌𝗂𝗈𝗇 𝗍𝗈 𝖺𝖽𝖽 𝗇𝖾𝗐 𝗆𝖾𝗆𝖻𝖾𝗋𝗌.\n\n𝖧𝗈𝗐 𝗍𝗈 𝗎𝗌𝖾 𝗆𝖾 /help\n\n**<blockquote>ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://telegram.me/AlwaysToHelpBot'>𝖠𝗄𝖺𝗌𝗁</a></blockquote>**",
         reply_markup=InlineKeyboardMarkup(
             [[
                 InlineKeyboardButton("⇆ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ⇆", url=f"https://telegram.me/ALL_PENDING_ACCEPT_BOT?startchannel=true&admin=invite_users")
@@ -88,16 +88,6 @@ async def start_message(c, m):
         )
     )
 
-@Client.on_message(filters.command(["stats", "status"]) & filters.user(ADMINS) & filters.reply)
-async def get_stats(bot, message):
-    total_users = await some_object.total_users_count()
-    total_chats = await .total_chats_count()
-    uptime = time.strftime("%Hh%Mm%Ss", time.gmtime(time.time() - bot.uptime))    
-    start_t = time.time()
-    rkn = await message.reply('**ᴘʀᴏᴄᴇssɪɴɢ.....**')    
-    end_t = time.time()
-    time_taken_s = (end_t - start_t) * 1000
-    await rkn.edit(text=f"**--Bᴏᴛ Sᴛᴀᴛᴜꜱ--** \n\n**⌚️ Bᴏᴛ Uᴩᴛɪᴍᴇ:** {uptime} \n**🐌 Cᴜʀʀᴇɴᴛ Pɪɴɢ:** `{time_taken_s:.3f} ᴍꜱ` \n**👭 Tᴏᴛᴀʟ Uꜱᴇʀꜱ:** `{total_users}`\n**💸 ᴛᴏᴛᴀʟ Chats:** `{total_chats}`")
 
 @Client.on_message(filters.command('help'))
 async def help_message(c,m):
