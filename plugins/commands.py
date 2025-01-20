@@ -88,7 +88,7 @@ async def start_message(c, m):
         )
     )
 
-@Client.on_message(filters.command(["stats", "status"]) & filters.user(rkn1.ADMIN))
+@Client.on_message(filters.command(["stats", "status"]) & filters.user(ADMINS) & filters.reply)
 async def get_stats(bot, message):
     total_users = await rkn_botz.total_users_count()
     total_chats = await rkn_botz.total_chats_count()
