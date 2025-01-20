@@ -93,7 +93,7 @@ async def start_message(c, m):
                 InlineKeyboardButton("• ғᴏʀ ᴍᴏʀᴇ •", url="https://t.me/+yft5ysRDW4BiOTc9")
             ]]
         )
-    )
+    
 
 @Client.on_message(filters.command('help'))
 async def help_message(c,m):
