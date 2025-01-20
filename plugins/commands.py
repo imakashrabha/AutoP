@@ -1,5 +1,6 @@
 import asyncio 
 from pyrogram import Client, filters, enums
+from pyrogram.types import Message
 from config import LOG_CHANNEL, API_ID, API_HASH, NEW_REQ_MODE, AUTH_CHANNEL, ADMINS
 from plugins.database import db
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
@@ -75,8 +76,14 @@ async def start_message(c, m):
     if not is_subscribed:
         return
 
-    await m.reply_photo("https://graph.org/file/af26401be816088d8463c-cf468bb80c0c371770.jpg", caption="𝖧𝖾𝗒 {mention},<b>\n\n›› 𝖨 𝖢𝖺𝗇 𝖠𝖼𝖼𝖾𝗉𝗍 𝖩𝗈𝗂𝗇 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝗌 𝖠𝗎𝗍𝗈𝗆𝖺𝗍𝗂𝖼𝖺𝗅𝗅𝗒.\n›› 𝖨 𝖢𝖺𝗇 𝖠𝖼𝖼𝖾𝗉𝗍 𝖠𝗅𝗅 𝖯𝖾𝗇𝖽𝗂𝗇𝗀 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝗌.\n\n𝖩𝗎𝗌𝗍 𝖺𝖽𝖽 𝗆𝖾 𝗂𝗇 𝗒𝗈𝗎𝗋 𝖼𝗁𝖺𝗇𝗇𝖾𝗅𝗌 𝖺𝗇𝖽 𝗀𝗋𝗈𝗎𝗉𝗌 𝗐𝗂𝗍𝗁 𝗉𝖾𝗋𝗆𝗂𝗌𝗌𝗂𝗈𝗇 𝗍𝗈 𝖺𝖽𝖽 𝗇𝖾𝗐 𝗆𝖾𝗆𝖻𝖾𝗋𝗌.\n\n𝖧𝗈𝗐 𝗍𝗈 𝗎𝗌𝖾 𝗆𝖾 /help\n\n**<blockquote>ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://telegram.me/AlwaysToHelpBot'>𝖠𝗄𝖺𝗌𝗁</a></blockquote>**",
-        reply_markup=InlineKeyboardMarkup(
+    async def send_reply(m: Message):
+    user_mention = m.from_user.mention if m.from_user else "User"
+    await m.reply_photo(
+        "https://graph.org/file/af26401be816088d8463c-cf468bb80c0c371770.jpg",
+        caption=f"𝖧𝖾𝗒 {user_mention},<b>\n\n›› 𝖨 𝖢𝖺𝗇 𝖠𝖼𝖼𝖾𝗉𝗍 𝖩𝗈𝗂𝗇 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝗌 𝖠𝗎𝗍𝗈𝗆𝖺𝗍𝗂𝖼𝖺𝗅𝗅𝗒.\n›› 𝖨 𝖢𝖺𝗇 𝖠𝖼𝖼𝖾𝗉𝗍 𝖠𝗅𝗅 𝖯𝖾𝗇𝖽𝗂𝗇𝗀 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝗌.\n\n𝖩𝗎𝗌𝗍 𝖺𝖽𝖽 𝗆𝖾 𝗂𝗇 𝗒𝗈𝗎𝗋 𝖼𝗁𝖺𝗇𝗇𝖾𝗅𝗌 𝖺𝗇𝖽 𝗀𝗋𝗈𝗎𝗉𝗌 𝗐𝗂𝗍𝗁 𝗉𝖾𝗋𝗆𝗂𝗌𝗌𝗂𝗈𝗇 𝗍𝗈 𝖺𝖽𝖽 𝗇𝖾𝗐 𝗆𝖾𝗆𝖻𝗂𝗋𝗌.\n\n𝖧𝗈𝗐 𝗍𝗈 𝗎𝗌𝖾 𝗆𝖾 /help\n\n**<blockquote>ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://telegram.me/AlwaysToHelpBot'>𝖠𝗄𝖺𝗌𝗁</a></blockquote>**"
+    )
+    
+    reply_markup=InlineKeyboardMarkup(
             [[
                 InlineKeyboardButton("⇆ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ⇆", url=f"https://telegram.me/ALL_PENDING_ACCEPT_BOT?startchannel=true&admin=invite_users")
             ],[
