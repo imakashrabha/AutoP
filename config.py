@@ -1,16 +1,16 @@
 from os import environ
 
-API_ID = int(environ.get("API_ID", "27705761"))
-API_HASH = environ.get("API_HASH", "822cb334ca4527a134aae97f9fe44fd6")
+API_ID = int(environ.get("API_ID", ""))
+API_HASH = environ.get("API_HASH", "")
 BOT_TOKEN = environ.get("BOT_TOKEN", "")
 
 # Make Bot Admin In Log Channel With Full Rights
-LOG_CHANNEL = int(environ.get("LOG_CHANNEL", "-1002492877612"))
-ADMINS = int(environ.get("ADMINS", "8110231942"))
-AUTH_CHANNEL = int(environ.get("AUTH_CHANNEL", "-1002008497819"))
+LOG_CHANNEL = int(environ.get("LOG_CHANNEL", ""))
+ADMINS = int(environ.get("ADMINS", ""))
+AUTH_CHANNEL = int(environ.get("AUTH_CHANNEL", ""))
 
 # Warning - Give Db uri in deploy server environment variable, don't give in repo.
-DB_URI = environ.get("DB_URI", "mongodb+srv://madtoazenzio:f9oDLc4c6H5zdP44@devutty.pk5so.mongodb.net/?retryWrites=true&w=majority&appName=devutty") # Warning - Give Db uri in deploy server environment variable, don't give in repo.
+DB_URI = environ.get("DB_URI", "") # Warning - Give Db uri in deploy server environment variable, don't give in repo.
 DB_NAME = environ.get("DB_NAME", "vjjoinrequetbot")
 
 # If this is True Then Bot Accept New Join Request 
