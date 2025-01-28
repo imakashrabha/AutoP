@@ -185,8 +185,8 @@ async def approve_new(client, m):
             await client.send_message(LOG_CHANNEL, LOG_TEXT.format(m.from_user.id, m.from_user.mention))
         await client.approve_chat_join_request(m.chat.id, m.from_user.id)
         try:
-            await client.send_message(m.from_user.id, "𝖧𝗂𝗂 {},\n\𝖸𝗈𝗎𝗋 𝗋𝖾𝗊𝗎𝖾𝗌𝗍 {} 𝗁𝖺𝗌 𝖻𝖾𝖾𝗇 𝖺𝖼𝖼𝖾𝗉𝗍𝖾𝖽. \n\n𝖩𝗈𝗂𝗇 𝗈𝗎𝗋 𝖼𝗁𝖺𝗇𝗇𝖾𝗅 𝖿𝗈𝗋 𝗇𝖾𝗐 𝗋𝖾𝗅𝖾𝗌𝖾𝖽, 𝖾𝗑𝖼𝗅𝗎𝗌𝗂𝗏𝖾 𝗆𝗈𝗏𝗂𝖾𝗌, 𝖺𝖽𝗎𝗅𝗍 𝗅𝖾𝖺𝗄𝗌 𝖼𝗈𝗅𝗅𝖾𝖼𝗍𝗂𝗈𝗇𝗌\n• 𝖬𝗈𝗏𝗂𝖾 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 \n https://t.me/ZoroflixBot?start=Z2V0LTM1MDc5Njk2NjQwNDE1 \n\n • 𝖠𝗇𝗂𝗆𝖾 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 \n https://t.me/ZoroflixBot?start=Z2V0LTM2MDgxOTczNjg3Mjg0 \n\n• 𝖠𝖽𝗎𝗅𝗍 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 \n https://t.me/ZoroflixBot?start=Z2V0LTM5MDg4ODA0ODI3ODkx \n\n • 𝖳𝗁𝖾 𝖲𝖾𝗅𝗅𝗂𝗇𝗀 𝖹𝗈𝗇𝖾 \n
- https://t.me/+VBHKmjS9YrY5NGFl \n\n 𝖢𝗅𝗂𝖼𝗄 𝗍𝗈 𝗃𝗈𝗂𝗇 𝖼𝗁𝖺𝗇𝗇𝖾𝗅𝗌 𝖩𝗈𝗂𝗇 𝖭𝗈𝗐".format(m.from_user.mention, m.chat.title))
+            await client.send_message(m.from_user.id, """𝖧𝗂𝗂 {},\n\𝖸𝗈𝗎𝗋 𝗋𝖾𝗊𝗎𝖾𝗌𝗍 {} 𝗁𝖺𝗌 𝖻𝖾𝖾𝗇 𝖺𝖼𝖼𝖾𝗉𝗍𝖾𝖽. \n\n𝖩𝗈𝗂𝗇 𝗈𝗎𝗋 𝖼𝗁𝖺𝗇𝗇𝖾𝗅 𝖿𝗈𝗋 𝗇𝖾𝗐 𝗋𝖾𝗅𝖾𝗌𝖾𝖽, 𝖾𝗑𝖼𝗅𝗎𝗌𝗂𝗏𝖾 𝗆𝗈𝗏𝗂𝖾𝗌, 𝖺𝖽𝗎𝗅𝗍 𝗅𝖾𝖺𝗄𝗌 𝖼𝗈𝗅𝗅𝖾𝖼𝗍𝗂𝗈𝗇𝗌\n• 𝖬𝗈𝗏𝗂𝖾 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 \n https://t.me/ZoroflixBot?start=Z2V0LTM1MDc5Njk2NjQwNDE1 \n\n • 𝖠𝗇𝗂𝗆𝖾 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 \n https://t.me/ZoroflixBot?start=Z2V0LTM2MDgxOTczNjg3Mjg0 \n\n• 𝖠𝖽𝗎𝗅𝗍 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 \n https://t.me/ZoroflixBot?start=Z2V0LTM5MDg4ODA0ODI3ODkx \n\n • 𝖳𝗁𝖾 𝖲𝖾𝗅𝗅𝗂𝗇𝗀 𝖹𝗈𝗇𝖾 \n
+ https://t.me/+VBHKmjS9YrY5NGFl \n\n 𝖢𝗅𝗂𝖼𝗄 𝗍𝗈 𝗃𝗈𝗂𝗇 𝖼𝗁𝖺𝗇𝗇𝖾𝗅𝗌 𝖩𝗈𝗂𝗇 𝖭𝗈𝗐""".format(m.from_user.mention, m.chat.title))
         except:
             pass
     except Exception as e:
